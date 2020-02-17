@@ -101,7 +101,8 @@
 
                     <suiteXmlFiles>
                         <!--代表的是要执行的测试套件名称-->
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <!--<suiteXmlFile>testng.xml</suiteXmlFile>-->
+                        <suiteXmlFile>${testngxml}</suiteXmlFile>
                     </suiteXmlFiles>
 
                 </configuration>
