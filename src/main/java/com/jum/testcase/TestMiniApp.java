@@ -1,9 +1,8 @@
 package com.jum.testcase;
 
-import com.jum.common.BaseTester;
+import com.jum.common.CommonStep;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
-import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -11,23 +10,14 @@ import org.testng.annotations.Test;
 
 @Slf4j
 @Epic("会员码")
-public class TestMiniApp extends BaseTester {
+public class TestMiniApp extends CommonStep {
 
     @Test(description = "启动小程序")
 //    @Epic("肉圆 Epic")
 //    @Story("肉圆 story")
-    @Step("肉圆 Step")
     @Description("Start 小程序")
     public void StartTestCase() throws InterruptedException {
-        log.info("start:");
-        Thread.sleep(2000);
-        driver.findElementByXPath("//*[@text='发现']").click();
-        Thread.sleep(2000);
-        driver.findElementByXPath("//*[@text='小程序']").click();
-        Thread.sleep(2000);
-        //进入小程序
-        driver.findElementByXPath("//*[@text='IN商圈']").click();
-        Thread.sleep(8000);
+        launchMiniApp();
 
         log.info("click member");
         log.debug(String.valueOf(System.currentTimeMillis()));
@@ -45,6 +35,8 @@ public class TestMiniApp extends BaseTester {
 
     @Test
     public void test3() {
+        log.info("test3 start");
         Assert.assertEquals(true, true, "true false assert fail test3");
+        log.info("test3 end");
     }
 }

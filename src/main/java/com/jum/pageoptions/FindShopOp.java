@@ -1,29 +1,27 @@
 package com.jum.pageoptions;
 
-import com.jum.pages.FindShopPage;
-import com.jum.common.CommonOp;
+import com.jum.common.CommonStep;
+import com.jum.page.FindShopPage;
+import io.appium.java_client.MobileDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.android.nativekey.KeyEventFlag;
+import io.qameta.allure.Allure;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Slf4j
 public class FindShopOp {
+    public AndroidDriver<WebElement> driver;
 
-    /*找店 按钮*/
-    public static String FindShopBtn = "找店";
-    public static String FindShopBtnXpath = "//*[@text='发现']";
-
-    public static void EnterFindShop(AndroidDriver<WebElement> driver, WebDriverWait wait){
-        log.debug("EnterFindShop");
-        WebElement webElement =  driver.findElementByAndroidUIAutomator("new UiSelector().text(\"" + FindShopBtn+"\")");
-        System.out.println(webElement.isSelected());
-        CommonOp.waitAndFindElement(driver,5, FindShopBtn).click();
-
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//         webElement =  driver.findElementByAndroidUIAutomator("new UiSelector().text(\"" + FindShopPage.FindShopBtn+"\")");
-//webElement.click();
-        System.out.println(webElement.isSelected());
-        System.out.println(webElement.isEnabled());
+    public FindShopOp(AndroidDriver<WebElement> driver) {
+        this.driver = driver;
     }
+
+    public void searchByName(String text){
+        Allure.step("输入并搜索");
+        CommonStep.Search(driver,FindShopPage.searchInput, text, 8);
+    }
+
 }
