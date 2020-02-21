@@ -49,6 +49,13 @@
         </dependency>
 
         <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-descriptions-javadoc</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>6.1.0</version>
@@ -101,8 +108,8 @@
 
                     <suiteXmlFiles>
                         <!--代表的是要执行的测试套件名称-->
-                        <!--<suiteXmlFile>testng.xml</suiteXmlFile>-->
-                        <suiteXmlFile>${testngxml}</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <!--<suiteXmlFile>${testngxml}</suiteXmlFile>-->
                     </suiteXmlFiles>
 
                 </configuration>

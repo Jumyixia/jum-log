@@ -2,14 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-    <test thread-count="1" name="JumTest">
+    <test thread-count="2" name="JumTest">
         <!--<packages>-->
             <!--<package name="com.jum.testCaseCase"/>-->
         <!--</packages>-->
         <classes>
-            <!--<class name="com.jum.testcase.TestMiniApp"/>-->
-            <!--<class name="com.jum.testcase.TestFindShop"/>-->
-            <class name="com.jum.testcase.Test01"/>
+            <class name="com.jum.testcase.TestMiniApp"/>
+            <class name="com.jum.testcase.TestFindShop"/>
         </classes>
     </test>
     <listeners>
